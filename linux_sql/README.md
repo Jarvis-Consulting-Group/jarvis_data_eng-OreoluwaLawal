@@ -113,4 +113,3 @@ Containerization of the database was done in docker, then I created a crontab jo
 
 # Improvements
 - Provide the ability to detect any host failure.
-- 
