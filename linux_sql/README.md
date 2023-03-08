@@ -1,6 +1,6 @@
 # Linux Cluster Monitoring Agent
 # Introduction
-The Linux Cluster Monitoring Agent is developed to gather a server's hardware specifications and resource usage data and store the data in a database. This application is designed to permit the Linux Cluster Administrator (LCA) to have a knowledge of a Linux server hardware and keep track of an ongoing Linux server resource usage data. 
+The Linux Cluster Monitoring Agent is developed to gather a server hardware specifications and resource usage data and store the data in a database. This application is designed to permit the Linux Cluster Administrator (LCA) to have a knowledge of a Linux server hardware and keep track of an ongoing Linux server resource usage data. 
 The application uses bash scripts executed continuously with crontab command to collect usage data and store the data in PostgresSQL instance in docker container.
 # Quick Start
 
@@ -34,7 +34,7 @@ crontab -e
 - Finally, using crontab the usage data is collected every minute and the monitoring app is deployed.
 
 ## Architecture
-![my image](./assets/cluster.jpg)
+![my image](./assets/cluster.drawio.png)
 
 ## Scripts
 ### psql_docker.sh
@@ -113,4 +113,3 @@ Containerization of the database was done in docker, then I created a crontab jo
 
 # Improvements
 - Provide the ability to detect any host failure.
-- 
