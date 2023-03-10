@@ -1,0 +1,149 @@
+# Preferred name (Characters only)
+name: "Oreoluwa Lawal"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I am a graduate of Humber College with a Post Graduate Degree in Information Technology Solutions. During my
+  program, I worked on several projects as a group and individually with several tech stacks. I had the
+  opportunity to work with a financial services company as a full stack developer focused on MERN stack technologies and
+  collaborated with team members to build a SaaS software. I was responsible for writing several Rest APIs and
+  implementing APIs on the front-end. From my experience, I have demonstrated problem-solving skills
+  and implemented optimized solutions to challenges. I am a Developer at Jarvis where i'm tasked on challenging
+  projects to improve my skills and broaden my knowledge. In my spare time, I like to read books and learn new things. I am looking to challenge myself and interested in positions where I can implement my creativity to solve
+  problems.
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Linux/Bash
+    - RDBMS/SQL
+    - Agile/Scrum
+    - Git
+    - HTML5
+    - CSS3
+
+  # At least 5 skills
+  competent:
+    - NodeJs
+    - ExpressJs
+    - JavaScript
+    - React
+    - Docker
+    - Linux
+    - Bootstrap
+  # At least 5 skills
+  familiar:
+    - TypeScript
+    - SCSS
+    - Mobile App Development(Android and iOS)
+    - C#
+    - Swift
+    - Springboot framework
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: ""
+  - name: "Python Data Analytics"
+    git_url: "/python_data_anlytics"
+    description: ""
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: ""
+  - name: "Spark"
+    git_url: "/spark"
+    description: ""
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Cryptocurrency Transaction Application"
+    #URL is optional
+    git_url: "https://github.com/Oreoluwatemi/Bitcoin-Testnet-Transactions-App"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Developed an application by which users can send some currency 
+     (testnet bitcoin) from one wallet to another via a frontend interface. Utilized BlockCypher API for payment 
+      processing, wallet details and querying the blockchain for pending transactions. Applied Sass and Bootstrap to make the 
+      application responsive. Implemented QRCode to display user wallet address for easy transactions.
+
+  - name: "Falcon Restaurant Web Application"
+    git_url:
+    description: Worked with a team to develop a full stack restaurant application for Falcon restaurant which displays all the restaurant services, it permits for users to view menus, reserve a seat and contact the restaurant. Users can login to place an order and view previous orders, while admin can view and manage all orders, reservations and menus available. 
+     Designed and developed the responsive web application using HTML5, CSS and JavaScript/NodeJS, ReactJS and MongoDB. Developed the frontend features such as reservation page, menu, orders, contact us along with backend features to develop REST API. Worked with Git to push, track and commit code changes to remote repositories.
+
+
+  - name: "Flight Management Web Application"
+    git_url: "https://github.com/Oreoluwatemi/FlightManagement"
+    description: Developed an application using Spring Boot Framework. The website enables users to view available flights by the location and date searched, users can also book a flight. An admin feature is developed to manage flights available, view booked flights and customers.
+      The application was built using Java and implemented spring security with Thymeleaf, HTML5 and CSS for the frontend development.
+      Implemented Swagger to provide a visual display of the API documentation.
+
+  - name: "Tiffin Mobile App"
+    git_url: "https://github.com/Oreoluwatemi/Tiffin-MobileApp"
+    description: Collaborated with a team to create a mobile app for Android that easily and efficiently enables users to find local food services nearby. 
+     Coordinated application plans with development teams and designed prototypes. Created app documentation which provided all pertinent information including features, capabilities and benefits. 
+     The app was developed using Android Studio as the IDE, Java, Firebase as the database and XML.
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2023-present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Collaborated with agile/scrum team to work on several projects with technologies such as Java, Linux, Docker. Participated in
+    daily scrum meetings and master code reviews with senior developers."
+  - title: "Full Stack Developer"
+    company: "PersonalBanker Canada"
+    duration: "2022"
+    description: "Designed, developed and modified 15+ custom components and features as defined and scoped by the product team. 
+    Worked with Git to push, track and commit code changes to remote repositories.
+	Planned, tracked and managed deliverables on 2 deployments to the cloud using Digital Ocean.
+	Worked with Figma to design and prototype the user interface for testing and collaboration.
+	Developed and maintained 10+ REST APIs, writing documentation according to specified requirements."
+#List of edcuation
+education: 
+  - school_name: "Covenant university"
+    duration: "2014-2019"
+    degree: "Bachelor of Engineering"
+    department: "Petroleum Engineering"
+    # optional
+    awards_achievements:
+      - "First Class Honors"
+      - "GPA: 4.51/5.0"
+
+  - school_name: "Humber College"
+    duration: "2021-2022"
+    degree: "Post Graduate Certificate"
+    department: "Information Technology Solutions"
+    awards_achievements:
+      - "Deans List (2021, 2022): Obtained a cumulative average of 80% or higher"
+      - "GPA: 3.53/4.0"
+
+#Optional section
+others:
+    #category
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Volunteer, Salvation Army: Assists in feeding community members weekly."
