@@ -4,6 +4,7 @@
 
 ###### Table Setup (DDL)
 ###### Members Table
+```sql
 CREATE TABLE cd.members (
 memid Integer NOT NULL,
 surname CHARACTER VARYING(200) NOT NULL,
@@ -20,8 +21,10 @@ DELETE
 SET
 NULL
 );
+```
 
 ###### Bookings Table
+```sql 
 CREATE TABLE cd.bookings (
 faceid Integer NOT NULL,
 memid Integer NOT NULL,
@@ -31,8 +34,10 @@ CONSTRAINT PK_bookings_faceid PRIMARY KEY(faceid),
 CONSTRAINT FK_bookings_memid FOREIGN KEY(memid)
 REFERENCES cd.members(memid)
 );
+```
 
 ###### Facilities Table
+```sql
 CREATE TABLE cd.facilities (
 faceid Integer NOT NULL,
 name CHARACTER VARYING(100) NOT NULL,
@@ -42,6 +47,8 @@ initialoutlay NUMERIC NOT NULL,
 monthlymaintenance NUMERIC NOT NULL,
 CONSTRAINT PK_facilities_faceid PRIMARY KEY(faceid)
 );
+```
+
 
 ###### Question 1: Show all members 
 
