@@ -1,5 +1,14 @@
 # Introduction
+This project is designed to master SQL by performing several queries. Anyone who works
+a database and needs to manage and manipulate data will require SQL queries to perform Data
+Definition Language (DDL) and Data Manipulation Language (DML). The technologies used in this project were Docker to manage the PSQL instance,
+PostgreSQL to perform SQL queries, Git & GitHub to manage and track source code.
 
+# Quick Start
+Load sample data into the database
+````bash
+psql -h localhost -U postgres -f clubdata.sql -d postgres -x -q
+````
 # SQL Queries
 
 ###### Table Setup (DDL)
@@ -52,7 +61,10 @@ CONSTRAINT PK_facilities_faceid PRIMARY KEY(faceid)
 
 ###### Question 1: Show all members 
 ```sql
-SELECT * FROM cd.members;
+select
+	*
+from
+	cd.members;
 ```
 
 ###### Questions 2: The club is adding a new facility - a spa.
