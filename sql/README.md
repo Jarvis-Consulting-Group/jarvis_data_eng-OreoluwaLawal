@@ -56,7 +56,7 @@ SELECT * FROM cd.members;
 ```
 
 ###### Questions 2: The club is adding a new facility - a spa.
-```roomsql
+```sql
 insert
 	into
 	cd.facilities
@@ -69,7 +69,7 @@ values
 800);
 ```
 ###### Questions 3: Automatically generate the value for the next facid, rather than specifying it as a constant.
-```roomsql 
+```sql 
 insert
 	into
 	cd.facilities
