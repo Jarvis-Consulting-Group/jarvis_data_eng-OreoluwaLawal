@@ -15,7 +15,9 @@ I am a graduate of Humber College with a Post Graduate Degree in Information Tec
 Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal/tree/master/linux_sql)]: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+**Cluster Monitor** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal/tree/master/linux_sql)]: Developed a Linux monitoring agent to gather a server hardware specifications and resource usage data and store the data in a database. Designed the application to permit an Administrator to have a knowledge of a Linux server hardware and keep track of ongoing Linux server resource usage data. Utilized bash scripts which is executed continuously with crontab command to collect usage data and store the data in the PostgreSQL instance in the docker container.
+
+**Database Manipulation** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal/tree/master/sql)]: To have an in-depth understanding of relational databases, RDMS, SQL, ERD, Data models and optimizations, I familiarized myself with these concepts in SQL with hands-on work on a dataset. Implemented DBeaver as the SQL client to perform several DDL and DML operations. Used several technologies such as Docker to manage the PSQL instance, PostgreSQL database to store the data, and Git & GitHub to manage and track source code.
 
 **Core Java Apps** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal/tree/master/core_java)]:
       
