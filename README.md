@@ -22,7 +22,7 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 **Core Java Apps** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal/tree/master/core_java)]:
       
   - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
+  - JDBC App: Developed a JDBC application that connects Java to a PostgreSQL RDBMS database. Implemented DAO design pattern to permit the Data Access Objects to implement the methods to perform CRUD operations on the database running on a docker container. Utilized Maven to manage the application packages and dependencies.
   - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
 
 **Springboot App** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal/tree/master/springboot)]: Not Started
