@@ -1,5 +1,8 @@
 package ca.jrvs.practice.dataStructure.list;
 
+import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class ArrayJLists<E> implements JList<E> {
 
     /**
@@ -49,27 +52,43 @@ public class ArrayJLists<E> implements JList<E> {
      */
     @Override
     public boolean add(E e) {
-        return false;
+        if (e == null) {
+            throw new NullPointerException("Null");
+        }
+        if (elementData.length == this.size) {
+            int newCapacity = size*2;
+            elementData = Arrays.copyOf(elementData, newCapacity);
+        }
+        elementData[size++] = e;
+        return true;
     }
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+
+        return Arrays.stream(elementData).toArray();
     }
 
     @Override
     public int size() {
-        return 0;
+
+        return elementData.length;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+
+        return elementData.length == 0;
     }
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        for (int i = 0; i < size; i++) {
+            if (elementData[i].equals(o)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
