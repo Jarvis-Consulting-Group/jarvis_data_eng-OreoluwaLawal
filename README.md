@@ -21,8 +21,8 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 **Core Java Apps** [[GitHub](https://github.com/Jarvis-Consulting-Group/jarvis_data_eng-OreoluwaLawal/tree/master/core_java)]:
       
-  - JDBC App: Developed a JDBC application that connects Java to a PostgreSQL RDBMS database. Implemented DAO design pattern to perform CRUD operations on the database running on a docker container. Utilized Maven to manage the application packages and dependencies.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
+  - JDBC App: Programmed a JDBC application that connects Java to a PostgreSQL RDBMS database. Implemented DAO design pattern to perform CRUD operations on the database running on a docker container. Utilized Maven to manage the application packages and dependencies.
+  - Grep App: Developed the application using Java 8 which simulates the grep command line function. The functionality to recursively search files with a pattern provided and output the matched lines to a text file was implemented. Utilized BufferedReader, FileReader, BufferedWriter and FileWriter to read and write into files. The application was packaged using Docker and uploaded to Docker Hub, and Maven was utilized to manage dependencies and build the app.
 
 
 ## Highlighted Projects
