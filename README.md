@@ -1,14 +1,14 @@
 # Oreoluwa Lawal . Jarvis Consulting
 
-I am a FullStack developer with a Post Graduate Degree in Information Technology Solutions from Humber College. I have worked on a variety of projects throughout my academics and professional career, including web applications. I am skilled in a variety of development frameworks, such as ReactJS and NodeJS, and I have expertise with a variety of programming languages, such as Java and JavaScript. In my previous experience, I collaborated with my team and participated in phases of the software development life cycle, including requirements gathering, development, testing, and part of the deployment process to build an agency dashboard system to permit agencies to manage their agents and clients and keep track of their financial services offered such as tax return and assessment. I am an effective communicator and collaborator, and I have worked seamlessly with cross-functional teams to achieve project goals. I currently work as a Software Developer at Jarvis, where I'm tasked with building and testing applications with technologies such as Java, Linux and Docker. In my spare time, I enjoy reading mystery/thriller novels and learning new things, which has allowed me to stay up-to-date with the latest technological advancements. I believe my passion for software development and my experience make me a good fit for any team. I am looking to challenge myself and am interested in positions where I can implement my creativity to solve problems.
+I am a FullStack developer with a Post Graduate Degree in Information Technology Solutions from Humber College. I have worked on a variety of projects throughout my academic and professional career, specializing in web applications. I am skilled in a variety of development frameworks, such as ReactJS and NodeJS, and I have expertise with a variety of programming languages, such as Java and JavaScript. As a FullStack developer in my last role, I collaborated with my team and participated in all phases of the software development life cycle, including requirements gathering, development, testing, and deployment process to build an agency dashboard system to permit agencies to manage their agents and clients and keep track of their financial services offered such as tax return and assessment. I am an effective communicator and collaborator, and I have worked seamlessly with cross-functional teams to achieve project goals. I currently work as a Software Developer at Jarvis, where I'm tasked with building and testing applications with technologies such as Java, Linux and Docker. In my spare time, I enjoy reading mystery/thriller novels and learning new things, which has allowed me to stay up-to-date with the latest technological advancements. I believe my passion for software development and my experience make me a good fit for any team. I am looking to challenge myself and am interested in positions where I can implement my creativity to solve problems.
 
 ## Skills
 
-**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, HTML5, CSS3
+**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, HTML5, CSS3, Node+Express, JavaScript
 
-**Competent:** Node+Express, JavaScript, React, Docker, Bootstrap, MongoDB
+**Competent:** React, Docker, Bootstrap, MongoDB, AdobeXD
 
-**Familiar:** SCSS, Android Application Development, C#, Firebase, Swift, Spring Boot, GCP
+**Familiar:** Figma, SCSS, Android Application Development, C#, Firebase, Swift, Spring Boot, GCP
 
 ## Jarvis Projects
 
