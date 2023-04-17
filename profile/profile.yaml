@@ -64,7 +64,7 @@ jarvis_projects:
   - name: "Core Java Apps"
     git_url: "/core_java"
     description:
-      #- "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "Twitter App: Developed a command line application using Java and Spring-Boot to permit users to post, delete and show tweets. The application uses Apache Http libraries and 1.0 OAuth libraries to interact with Twitter APIs and Jackson library to parse objects to JSON and vice versa. MVC architecture was implemented to handle specific development aspects of an application. Maven was implemented to manage project dependencies and the application was deployed using Docker. Other technologies used were Postman to test the Twitter API."
       - "JDBC App: Programmed a JDBC application that connects Java to a PostgreSQL RDBMS database. Implemented DAO design pattern to perform CRUD operations on the database running on a docker container. Utilized Maven to manage the application packages and dependencies."
       - "Grep App: Developed the application using Java 8 which simulates the grep command line function.
        The functionality to recursively search files with a pattern provided and output the matched lines to a text file was implemented. Utilized BufferedReader, FileReader, BufferedWriter and FileWriter to read and write into files.
