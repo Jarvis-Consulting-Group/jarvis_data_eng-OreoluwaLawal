@@ -25,7 +25,6 @@
   "highlighted_projects": [
     {
       "description": "Developed an application by which users can send some currency from one wallet to another via a frontend interface. Utilized BlockCypher API for payment processing, wallet details and querying the blockchain for pending transactions. Applied Sass and Bootstrap to make the application responsive. The application was tested with Testnet Bitcoin.",
-      "git_url": "https://github.com/Oreoluwatemi/Bitcoin-Testnet-Transactions-App",
       "name": "Cryptocurrency Transaction Application"
     },
     {

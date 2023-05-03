@@ -27,7 +27,7 @@ Project source code: [https://github.com/Jarvis-Consulting-Group/jarvis_data_eng
 
 
 ## Highlighted Projects
-**Cryptocurrency Transaction Application** [[GitHub](https://github.com/Oreoluwatemi/Bitcoin-Testnet-Transactions-App)]: Developed an application by which users can send some currency from one wallet to another via a frontend interface. Utilized BlockCypher API for payment processing, wallet details and querying the blockchain for pending transactions. Applied Sass and Bootstrap to make the application responsive. The application was tested with Testnet Bitcoin.
+**Cryptocurrency Transaction Application**: Developed an application by which users can send some currency from one wallet to another via a frontend interface. Utilized BlockCypher API for payment processing, wallet details and querying the blockchain for pending transactions. Applied Sass and Bootstrap to make the application responsive. The application was tested with Testnet Bitcoin.
 
 **Falcon Restaurant Web Application**: Worked with a team to develop a full stack application for a restaurant. The application permits users to view menus, reserve a seat and contact the restaurant. Users can login to place an order and view previous orders, while admin can view and manage all orders, reservations and menus available. Designed and developed the responsive web application using HTML5, CSS and JavaScript/NodeJS, ReactJS and MongoDB. Developed the frontend features such as reservation page, menu, orders, contact us along with backend features to develop REST API. Worked with Git to push, track and commit code changes to remote repositories.
 
