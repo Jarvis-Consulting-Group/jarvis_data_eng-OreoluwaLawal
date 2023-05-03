@@ -91,7 +91,7 @@ highlighted_projects:
     #project name
   - name: "Cryptocurrency Transaction Application"
     #URL is optional
-    git_url: "https://github.com/Oreoluwatemi/Bitcoin-Testnet-Transactions-App"
+    git_url:
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: Developed an application by which users can send some currency 
      from one wallet to another via a frontend interface. Utilized BlockCypher API for payment 
