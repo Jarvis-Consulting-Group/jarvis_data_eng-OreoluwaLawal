@@ -23,6 +23,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -33,7 +34,7 @@ import java.util.stream.StreamSupport;
 public class MarketDataDao implements CrudRepository<IexQuote, String> {
 
     private static final String IEX_BATCH_PATH = "/stock/market/batch?symbols=%s&types=quote&token=";
-    private final String IEX_BATCH_URL;
+     private final String IEX_BATCH_URL;
 
     private Logger logger = LoggerFactory.getLogger(MarketDataDao.class);
     private HttpClientConnectionManager httpClientConnectionManager;
@@ -57,15 +58,29 @@ public class MarketDataDao implements CrudRepository<IexQuote, String> {
     @Override
     public Optional<IexQuote> findById(String s) {
         Optional<IexQuote> iexQuote;
-        List<IexQuote> quotes = (List<IexQuote>) findAllById(Collections.singletonList(s));
+        //List<IexQuote> quotes = (List<IexQuote>) findAllById(Collections.singletonList(s));
+        String uri = String.format(IEX_BATCH_URL, s);
+        String response = executeHttpGet(uri).orElseThrow(() -> new IllegalArgumentException("Invalid ticker"));
 
-        if(quotes.size() == 0){
-            return Optional.empty();
-        } else if (quotes.size() == 1){
-            iexQuote = Optional.of(quotes.get(0));
-        } else {
-            throw new DataRetrievalFailureException("Unexpected number of quotes");
+        JSONObject IexQuotesJson = new JSONObject( response.replaceAll("<.*?>|\u00a0","") );
+
+        if(IexQuotesJson.length() == 0) {
+            throw new IllegalArgumentException("Invalid ticker");
         }
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            iexQuote = Optional.ofNullable(objectMapper.readValue(IexQuotesJson.getJSONObject(s).get("quote").toString(), IexQuote.class));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+//        if(quotes.size() == 0){
+//            return Optional.empty();
+//        } else if (quotes.size() == 1){
+//            iexQuote = Optional.of(quotes.get(0));
+//        } else {
+//            throw new DataRetrievalFailureException("Unexpected number of quotes");
+//        }
         return iexQuote;
     }
 
@@ -90,28 +105,28 @@ public class MarketDataDao implements CrudRepository<IexQuote, String> {
 
         String response = executeHttpGet(uri).orElseThrow(() -> new IllegalArgumentException("Invalid ticker"));
 
-        JSONObject IexQuotesJson = new JSONObject(response);
+        JSONObject IexQuotesJson = new JSONObject( response );
 
         if(IexQuotesJson.length() == 0) {
             throw new IllegalArgumentException("Invalid ticker");
         }
 
-        ObjectMapper mapper = new ObjectMapper();
-
-        return StreamSupport.stream(tickers.spliterator(), false).map(ticker -> {
-            try {
-                JSONObject jsonObject = IexQuotesJson.getJSONObject(ticker);
-                IexQuote quote = mapper.readValue(jsonObject.get("quote").toString(), IexQuote.class);
-
-                if(quote == null) {
-                    throw new IllegalArgumentException("Invalid ticker");
+        List<IexQuote> quotes = new ArrayList<>();
+        ObjectMapper objectMapper = new ObjectMapper();
+        for (String ticker : tickers) {
+            if (IexQuotesJson.has(ticker)) {
+                try {
+                    IexQuote quote = objectMapper.readValue(IexQuotesJson.getJSONObject(ticker).get("quote").toString(), IexQuote.class);
+                    quotes.add(quote);
+                } catch (IOException e) {
+                    logger.error("Failed to map JSON to class", e);
                 }
-
-                return quote;
-            } catch (JSONException | IOException e) {
+            } else {
                 throw new IllegalArgumentException("Invalid ticker");
             }
-        }).collect(Collectors.toList());
+        }
+
+        return quotes;
     }
 
     @Override

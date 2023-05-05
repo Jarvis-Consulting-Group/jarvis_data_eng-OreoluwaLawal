@@ -32,7 +32,7 @@ public class QuoteDaoIntTest {
         savedQuote.setAskSize(12);
         savedQuote.setBidPrice(10.2d);
         savedQuote.setBidSize(10);
-        savedQuote.setId("fb2");
+        savedQuote.setId("MSFT");
         savedQuote.setLastPrice(10.1d);
         quoteDao.save(savedQuote);
 
@@ -41,7 +41,7 @@ public class QuoteDaoIntTest {
         quote1.setAskSize(12);
         quote1.setBidPrice(10.2d);
         quote1.setBidSize(10);
-        quote1.setId("mtl");
+        quote1.setId("AMON");
         quote1.setLastPrice(10.1d);
         quoteDao.save(quote1);
 
@@ -50,7 +50,7 @@ public class QuoteDaoIntTest {
         quote2.setAskSize(12);
         quote2.setBidPrice(10.2d);
         quote2.setBidSize(10);
-        quote2.setId("fb3");
+        quote2.setId("AMZN");
         quote2.setLastPrice(10.1d);
         quoteDao.save(quote2);
 
@@ -59,40 +59,40 @@ public class QuoteDaoIntTest {
         quote3.setAskSize(12);
         quote3.setBidPrice(10.2d);
         quote3.setBidSize(10);
-        quote3.setId("aapl");
+        quote3.setId("AAPL");
         quote3.setLastPrice(10.1d);
         quoteDao.save(quote3);
     }
 
     @Test
     public void save() {
-        assertEquals(savedQuote.getId(), "fb2");
+        assertEquals(savedQuote.getId(), "MSFT");
         assertEquals((int) savedQuote.getAskSize(), 12);
         assertEquals((int) savedQuote.getBidSize(), 10);
     }
 
     @Test
     public void findById(){
-        Optional<Quote> quote = quoteDao.findById("mtl");
-        assertEquals("mtl", quote.get().getId());
+        Optional<Quote> quote = quoteDao.findById("MSFT");
+        assertEquals("MSFT", quote.get().getId());
     }
 
     @Test
     public void existById(){
-        assertTrue(quoteDao.existsById("fb2"));
-        assertTrue(quoteDao.existsById("mtl"));
+        assertTrue(quoteDao.existsById("MSFT"));
+        assertTrue(quoteDao.existsById("AAPL"));
     }
 
     @Test
     public void findAll(){
         List<Quote> quotes = (List<Quote>) quoteDao.findAll();
-        assertEquals(quotes.get(0).getId(), "fb2");
+        assertEquals(quotes.get(0).getId(), "MSFT");
     }
     @Test
     public void deleteOne(){
-        assertTrue(quoteDao.existsById("aapl"));
-        quoteDao.deleteById("aapl");
-        assertFalse(quoteDao.existsById("aapl"));
+        assertTrue(quoteDao.existsById("AAPL"));
+        quoteDao.deleteById("AAPL");
+        assertFalse(quoteDao.existsById("AAPL"));
     }
 
     @Test
