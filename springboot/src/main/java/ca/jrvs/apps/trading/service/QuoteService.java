@@ -30,19 +30,22 @@ public class QuoteService {
         this.marketDataDao = marketDataDao;
     }
 
-    public void updateMarketData() {
+    public List<Quote> updateMarketData() {
         List<Quote> quotes = (List<Quote>) quoteDao.findAll();
         Optional<IexQuote> iexQuotes = null;
+        List<Quote> quoteList = new ArrayList<>();
 
         try {
             for (Quote quote : quotes) {
                 iexQuotes = marketDataDao.findById(quote.getTicker());
 
-                quoteDao.save(buildQuoteFromIexQuote(iexQuotes.get()));
+               quoteList.add(quoteDao.save(buildQuoteFromIexQuote(iexQuotes.get())));
             }
         } catch (DataAccessException | IllegalArgumentException ex){
             throw new RuntimeException(ex);
         }
+
+        return quoteList;
     }
 
     protected static Quote buildQuoteFromIexQuote(IexQuote iexQuote){

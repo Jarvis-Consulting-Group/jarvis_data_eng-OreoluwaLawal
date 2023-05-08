@@ -69,11 +69,12 @@ public class QuoteServiceIntTest {
 
     @Test
     public void updateMarketData(){
-       quoteService.updateMarketData();
+       List<Quote> quotes = quoteService.updateMarketData();
 
         IexQuote iexQuote = quoteService.findIexQuoteByTicker("MSFT");
 
         assertEquals("MSFT", iexQuote.getSymbol());
+        assertEquals("MSFT", quotes.get(0).getId());
     }
 
     @Test
