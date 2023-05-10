@@ -1,6 +1,7 @@
 package ca.jrvs.apps.trading.dao;
 
 import ca.jrvs.apps.trading.TestConfig;
+import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Trader;
 import com.google.common.collect.Lists;
 import org.junit.Before;
@@ -22,7 +23,11 @@ import static org.junit.Assert.assertTrue;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TestConfig.class)
 @Sql({"classpath:schema.sql"})
-public class TraderDaoIntTest {
+public class AccountDaoTest {
+
+    @Autowired
+    AccountDao accountDao;
+    Account account;
 
     @Autowired
     private TraderDao traderDao;
@@ -30,7 +35,6 @@ public class TraderDaoIntTest {
 
     @Before
     public void insertOne(){
-
         trader = new Trader();
         trader.setFirstName("Oreoluwa");
         trader.setLastName("Lawal");
@@ -38,24 +42,23 @@ public class TraderDaoIntTest {
         trader.setEmail("oreo@gmail.com");
         trader.setDob(new Date(System.currentTimeMillis()));
         traderDao.save(trader);
+
+        account = new Account();
+        account.setAmount(10.00);
+        account.setTraderId(1);
+        accountDao.save(account);
     }
 
     @Test
     public void findAllById(){
-        List<Trader> traders = Lists.newArrayList(traderDao.findAllById(Arrays.asList(1, -1)));
-        assertEquals(1, traders.size());
-        assertEquals(trader.getCountry(), traders.get(0).getCountry());
-    }
-
-    @Test
-    public void findById(){
-        Optional<Trader> traders = traderDao.findById(1);
-        assertEquals(trader.getCountry(), traders.get().getCountry());
+        List<Account> accounts = Lists.newArrayList(accountDao.findAllById(Arrays.asList(1, -1)));
+        assertEquals(account.getTraderId(), accounts.get(0).getId());
+        assertTrue(accounts.size() == 1);
     }
 
     @Test
     public void deleteOne(){
-        traderDao.deleteById(trader.getId());
-        assertTrue(traderDao.count() == 0);
+        accountDao.deleteById(account.getId());
+        assertTrue(accountDao.count() == 0);
     }
 }

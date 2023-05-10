@@ -1,7 +1,9 @@
 package ca.jrvs.apps.trading.dao;
 
 import ca.jrvs.apps.trading.model.domain.Entity;
-import ca.jrvs.apps.trading.model.domain.Quote;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataRetrievalFailureException;
@@ -13,12 +15,8 @@ import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.StreamSupport;
+public abstract class JdbcCrudDao<T extends Entity<Integer>> implements CrudRepository<T, Integer> {
 
-public abstract class JdbcCrudDao<T extends Entity<Integer>> implements CrudRepository<T, Integer>{
     private static final Logger logger = LoggerFactory.getLogger(JdbcCrudDao.class);
     abstract public JdbcTemplate getJdbcTemplate();
     abstract public SimpleJdbcInsert getSimpleJdbcInsert();

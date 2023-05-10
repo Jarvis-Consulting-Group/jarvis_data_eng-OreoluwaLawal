@@ -1,7 +1,6 @@
 package ca.jrvs.apps.trading.dao;
 
-import ca.jrvs.apps.trading.model.domain.Trader;
-import javax.sql.DataSource;
+import ca.jrvs.apps.trading.model.domain.SecurityOrder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,17 +8,18 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public class TraderDao extends JdbcCrudDao<Trader>{
+import javax.sql.DataSource;
 
-    private static final Logger logger = LoggerFactory.getLogger(TraderDao.class);
-    private final String TABLE_NAME = "trader";
+@Repository
+public class SecurityOrderDao extends JdbcCrudDao<SecurityOrder> {
+    private static final Logger logger = LoggerFactory.getLogger(SecurityOrder.class);
+    private final String TABLE_NAME = "security_order";
     private final String ID_COLUMN = "id";
     private JdbcTemplate jdbcTemplate;
     private SimpleJdbcInsert simpleJdbcInsert;
 
     @Autowired
-    public TraderDao(DataSource dataSource){
+    public SecurityOrderDao(DataSource dataSource){
         this.jdbcTemplate = new JdbcTemplate(dataSource);
         this.simpleJdbcInsert = new SimpleJdbcInsert(dataSource).withTableName(TABLE_NAME)
                 .usingGeneratedKeyColumns(ID_COLUMN);
@@ -46,27 +46,30 @@ public class TraderDao extends JdbcCrudDao<Trader>{
     }
 
     @Override
-    Class<Trader> getEntityClass() {
-        return Trader.class;
+    Class<SecurityOrder> getEntityClass() {
+        return SecurityOrder.class;
     }
-
+    public void deleteByAccountId(Integer id) {
+        String query = "DELETE FROM " + TABLE_NAME + " WHERE account_id=?";
+        getJdbcTemplate().update(query, id);
+    }
     @Override
-    public int updateOne(Trader entity) {
+    public int updateOne(SecurityOrder entity) {
         throw new UnsupportedOperationException("Not implemented");
     }
 
     @Override
-    public <S extends Trader> Iterable<S> saveAll(Iterable<S> iterable) {
+    public <S extends SecurityOrder> Iterable<S> saveAll(Iterable<S> iterable) {
         throw new UnsupportedOperationException("Not implemented");
     }
 
     @Override
-    public void delete(Trader trader) {
+    public void delete(SecurityOrder securityOrder) {
         throw new UnsupportedOperationException("Not implemented");
     }
 
     @Override
-    public void deleteAll(Iterable<? extends Trader> iterable) {
+    public void deleteAll(Iterable<? extends SecurityOrder> iterable) {
         throw new UnsupportedOperationException("Not implemented");
     }
 }
