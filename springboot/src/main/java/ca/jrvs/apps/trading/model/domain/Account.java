@@ -1,6 +1,11 @@
 package ca.jrvs.apps.trading.model.domain;
 
+import javax.persistence.*;
+
+
+@Table
 public class Account implements Entity<Integer>{
+    @Id
     private Integer id;
     private Integer traderId;
     private Double amount;

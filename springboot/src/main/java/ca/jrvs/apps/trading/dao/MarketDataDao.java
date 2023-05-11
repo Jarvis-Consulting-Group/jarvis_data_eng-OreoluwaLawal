@@ -62,7 +62,7 @@ public class MarketDataDao implements CrudRepository<IexQuote, String> {
         String uri = String.format(IEX_BATCH_URL, s);
         String response = executeHttpGet(uri).orElseThrow(() -> new IllegalArgumentException("Invalid ticker"));
 
-        JSONObject IexQuotesJson = new JSONObject( response.replaceAll("<.*?>|\u00a0","") );
+        JSONObject IexQuotesJson = new JSONObject( response );
 
         if(IexQuotesJson.length() == 0) {
             throw new IllegalArgumentException("Invalid ticker");

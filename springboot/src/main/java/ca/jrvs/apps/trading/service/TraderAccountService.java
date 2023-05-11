@@ -1,21 +1,19 @@
 package ca.jrvs.apps.trading.service;
 
-import ca.jrvs.apps.trading.dao.AccountDao;
-import ca.jrvs.apps.trading.dao.PositionDao;
-import ca.jrvs.apps.trading.dao.SecurityOrderDao;
-import ca.jrvs.apps.trading.dao.TraderDao;
+import ca.jrvs.apps.trading.dao.*;
 import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Position;
 import ca.jrvs.apps.trading.model.domain.Trader;
 import ca.jrvs.apps.trading.model.domain.TraderAccountView;
+import ca.jrvs.apps.trading.repository.AccountJpaDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-import java.util.TreeSet;
 
 @Service
 public class TraderAccountService {
@@ -60,12 +58,13 @@ public class TraderAccountService {
         return traderAccountView;
     }
 
+    @Transactional
     public void deleteTraderById(Integer traderId){
         Optional<Trader> trader = traderDao.findById(traderId);
         if(trader == null || traderId == null){
             throw new IllegalArgumentException("Trader id does not exists!");
         }
-        Account traderAccount = accountDao.findAccountByTraderId(trader.get().getId());
+        Account traderAccount = accountDao.findAccountByTraderId(traderId);
         if(traderAccount.getAmount() != 0){
             throw new IllegalArgumentException("Unable to delete, account balance is not 0 ");
         }
@@ -81,7 +80,7 @@ public class TraderAccountService {
         accountDao.deleteById(traderId);
         traderDao.deleteById(traderId);
     }
-
+    @Transactional
     public Account deposit(Integer traderId, Double fund){
         if(traderId == null || fund <= 0){
             throw new IllegalArgumentException("Trader id field is missing or funds is less than or equal to 0");
@@ -102,7 +101,7 @@ public class TraderAccountService {
         return account;
 
     }
-
+    @Transactional
     public Account withdraw(Integer traderId, Double funds){
         if(traderId == null || funds <= 0){
             throw new IllegalArgumentException("Trader id field is missing or funds is less than or equal to 0");
@@ -111,7 +110,7 @@ public class TraderAccountService {
         if(trader.get().getId() == null){
             throw new IllegalArgumentException("Trader does not exist");
         }
-        Account account = accountDao.findAccountByTraderId(trader.get().getId());
+        Account account = accountDao.findAccountByTraderId(traderId);
         if(account.getAmount() - funds < 0) throw new IllegalArgumentException("Insufficient balance");
         account.setAmount(account.getAmount() - funds);
 
