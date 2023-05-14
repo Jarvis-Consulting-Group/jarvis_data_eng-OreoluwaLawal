@@ -2,7 +2,6 @@ package ca.jrvs.apps.trading.service;
 
 import ca.jrvs.apps.trading.dao.MarketDataDao;
 import ca.jrvs.apps.trading.dao.QuoteDao;
-import ca.jrvs.apps.trading.repository.QuoteJpaDao;
 import ca.jrvs.apps.trading.model.domain.IexQuote;
 import ca.jrvs.apps.trading.model.domain.Quote;
 import org.slf4j.Logger;

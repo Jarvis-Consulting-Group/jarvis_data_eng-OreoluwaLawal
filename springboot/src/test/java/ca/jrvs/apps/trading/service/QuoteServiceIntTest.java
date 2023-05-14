@@ -5,7 +5,6 @@ import ca.jrvs.apps.trading.dao.QuoteDao;
 import ca.jrvs.apps.trading.dao.QuoteDaoIntTest;
 import ca.jrvs.apps.trading.model.domain.IexQuote;
 import ca.jrvs.apps.trading.model.domain.Quote;
-import ca.jrvs.apps.trading.repository.QuoteJpaDao;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

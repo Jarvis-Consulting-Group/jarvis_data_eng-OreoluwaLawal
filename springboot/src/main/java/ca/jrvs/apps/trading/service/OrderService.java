@@ -5,8 +5,6 @@ import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Quote;
 import ca.jrvs.apps.trading.model.domain.SecurityOrder;
 import ca.jrvs.apps.trading.model.dto.MarketOrderDto;
-import ca.jrvs.apps.trading.repository.AccountJpaDao;
-import ca.jrvs.apps.trading.repository.QuoteJpaDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

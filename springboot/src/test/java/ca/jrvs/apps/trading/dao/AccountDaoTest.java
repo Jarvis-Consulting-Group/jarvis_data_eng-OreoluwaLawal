@@ -3,7 +3,6 @@ package ca.jrvs.apps.trading.dao;
 import ca.jrvs.apps.trading.TestConfig;
 import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Trader;
-import ca.jrvs.apps.trading.repository.AccountJpaDao;
 import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;

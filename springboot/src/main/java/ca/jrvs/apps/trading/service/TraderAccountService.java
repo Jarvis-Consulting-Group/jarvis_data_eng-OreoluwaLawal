@@ -5,7 +5,6 @@ import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Position;
 import ca.jrvs.apps.trading.model.domain.Trader;
 import ca.jrvs.apps.trading.model.domain.TraderAccountView;
-import ca.jrvs.apps.trading.repository.AccountJpaDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
